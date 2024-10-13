@@ -1,0 +1,3 @@
+name: CreativeContainers
+version: '${project.version}'
+main: net.txsla.creativecontainers.CreativeContainers
