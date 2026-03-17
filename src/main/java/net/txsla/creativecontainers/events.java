@@ -1,5 +1,6 @@
 package net.txsla.creativecontainers;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
@@ -25,6 +26,11 @@ public class events implements Listener {
     @EventHandler
     public static void onInteract(BlockPlaceEvent e) {
         Player p = e.getPlayer();
+
+        // bypass, change on compile
+        if (e.getPlayer().isSneaking() && p.isOp()) return;
+        //if (!e.getPlayer().getGameMode().equals(GameMode.CREATIVE)) return;
+
 
         // get data of placed container
         Block block = e.getBlock();
